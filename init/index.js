@@ -1,3 +1,4 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const initdata = require("./data.js");
 const courseData = require("./coursedata.js");
@@ -5,10 +6,10 @@ const courseData = require("./coursedata.js");
 const University = require("../models/university.js");
 const Course = require("../models/course.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/Papervault";
+const MONGO_URL = process.env.MONGO_URL;
 
 async function main() {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(process.env.MONGO_URL);
     console.log("connected to DB");
 }
 
