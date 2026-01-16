@@ -96,6 +96,9 @@ const upload = multer({
 /* =======================
    AUTH ROUTES
 ======================= */
+app.get("/", (req, res) => {
+  res.redirect("/university");
+});
 
 // LOGIN PAGE
 app.get("/login", (req, res) => {
