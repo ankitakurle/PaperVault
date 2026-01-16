@@ -1,0 +1,115 @@
+/* ================= PAGE LAYOUT ================= */
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f7f9fc;
+}
+
+.page-container {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+/* ================= TOP BACK LINK ================= */
+
+.top-back-link {
+  margin-bottom: 1.5rem;
+}
+
+.back-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= HEADER ================= */
+
+.pv-header {
+  background-color: #1e40af;
+}
+
+.pv-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.pv-brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Auth */
+
+/* ================= COURSE HEADER ================= */
+
+.course-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.course-title {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #1e40af;
+}
+
+.course-subtitle {
+  font-size: 0.95rem;
+  color: #1e40af;
+  margin-top: 0.25rem;
+}
+
+/* ================= FILTER CARD ================= */
+
+.filter-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 2rem;
+
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* ================= FORM ================= */
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.4rem;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.form-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;     /* 🔥 FIX */
+  gap: 1.5rem;
+}
+
+/* Normalize height */
+.form-actions .btn,
+.upload-outline-btn {
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+

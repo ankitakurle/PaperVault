@@ -1,0 +1,163 @@
+/* ================= PAGE LAYOUT ================= */
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f7f9fc;
+}
+
+.page-container {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+/* ================= TOP BACK LINK ================= */
+
+.top-back-link {
+  margin-bottom: 1.5rem;
+}
+
+.back-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= HEADER ================= */
+
+.pv-header {
+  background-color: #1e40af;
+}
+
+.pv-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.pv-brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Auth */
+
+
+/* ================= UNIVERSITY INFO ================= */
+.university-logo {
+  width: 80px;
+  height: 80px;
+ 
+
+  /* object-fit: contain;
+ 
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb; */
+}
+
+.university-info {
+  text-align: center;              /* 🔥 KEY FIX */
+  margin-bottom: 3rem;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color:  #1e40af;
+  margin-bottom: 0.4rem;
+}
+
+.university-location {
+  font-size: 0.95rem;
+  color: #1e40af;
+}
+
+/* ================= COURSES SECTION ================= */
+
+.courses-section {
+  margin-top: 1rem;
+}
+
+.section-title {
+  text-align: center;              /* 🔥 KEY FIX */
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 2rem;
+}
+
+/* ================= COURSE CARD ================= */
+
+.course-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.course-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 1.6rem 1rem;
+  text-align: center;
+
+  border: 1px solid #306de7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 90px;                /* 🔥 uniform height */
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(30, 64, 175, 0.25);
+}
+
+/* Course name */
+.course-name {
+  font-size: 1.1rem;               /* 🔥 stronger */
+  font-weight: 600;
+  color: #1e40af;
+}
+
+/* ================= EMPTY STATE ================= */
+
+.empty-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* ================= BACK LINK ================= */
+
+.back-link-wrapper {
+  text-align: center;              /* 🔥 KEY FIX */
+  margin-top: 3.5rem;
+}
+
+.back-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,87 @@
+/* ===============================
+   HEADER AUTH BUTTON (UNIFIED)
+================================ */
+
+.pv-auth {
+  display: flex;
+  align-items: center;
+}
+
+/* SAME STYLE FOR LOGIN & REGISTER */
+.pv-auth-link {
+  font-size: 0.85rem;
+  color: #e0e7ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* HOVER EFFECT */
+.pv-auth-link:hover {
+  color: #ffffff;
+}
+
+/* ACTIVE PRESS EFFECT */
+.pv-auth-link:active {
+  transform: scale(0.96);
+}
+
+/* ===============================
+   AUTH PAGE (UNCHANGED)
+================================ */
+
+.auth-page {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f7fb;
+}
+
+.auth-card {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.auth-title {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.auth-btn {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.auth-links {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.auth-links a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+.auth-links span {
+  margin: 0 6px;
+  color: #999;
+}

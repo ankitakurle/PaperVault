@@ -1,0 +1,171 @@
+/* ================= GLOBAL ================= */
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f7f9fc;
+}
+
+/* Shared page container */
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+}
+/* ===================Back===================== */
+.back-link {
+  text-decoration: none;
+  color: #0d6efd;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: none;
+  color: #084298;
+}
+/* ================= HEADER ================= */
+
+.pv-header {
+  background-color: #1e40af;
+}
+
+.pv-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Brand */
+.pv-brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Search */
+.pv-search {
+  flex: 1;
+  display: flex;
+  max-width: 420px;
+}
+
+.pv-search input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  outline: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 0.85rem;
+}
+
+.pv-search button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.85rem;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+/* Auth */
+.pv-auth {
+  display: flex;
+  gap: 1rem;
+}
+
+.pv-auth-link {
+  font-size: 1rem;
+  color: #e0e7ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.pv-auth-link:hover {
+  color: #ffffff;
+}
+
+.pv-register {
+  font-size: 1rem;
+  color: #e0e7ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ================= PAGE HEADING ================= */
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+/* ================= UNIVERSITY CARD ================= */
+
+.university-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem 1.5rem;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.university-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.25);
+}
+
+/* Logo */
+.card-img-top {
+  height: 160px;
+  width: 160px;
+  object-fit: contain;
+  margin-bottom: 1.25rem;
+}
+
+/* Text */
+.card-body {
+  width: 100%;
+  padding: 0;
+}
+
+.card-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #1e3a8a;
+  line-height: 1.45;
+
+  border-top: 1px solid #505256;
+  padding-top: 0.75rem;
+}
+
+.card-text b {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+/* Link reset */
+.university-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Cleanup */
+.card-img-overlay {
+  display: none;
+}
+

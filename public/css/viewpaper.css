@@ -1,0 +1,129 @@
+/* ================= PAGE LAYOUT ================= */
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  margin: 0;
+  background-color: #f7f9fc;
+}
+
+.page-container {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+/* ================= HEADER ================= */
+
+.pv-header {
+  background-color: #1e40af;
+}
+
+.pv-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pv-brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ================= BACK LINK ================= */
+
+.top-back-link {
+  margin-bottom: 1.5rem;
+}
+
+.back-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= PAGE TITLE ================= */
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+/* ================= EMPTY STATE ================= */
+
+.empty-text {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* ================= PAPERS LIST ================= */
+
+.papers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ================= PAPER CARD ================= */
+
+.paper-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 1.6rem;
+
+  border: 1px solid #e5e7eb;
+
+  transition: box-shadow 0.25s ease;
+}
+
+.paper-card:hover {
+  box-shadow: 0 14px 32px rgba(30, 64, 175, 0.2);
+}
+
+/* Title */
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+/* Meta info */
+.paper-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  font-size: 0.85rem;
+  color: #4b5563;
+
+  margin-bottom: 1rem;
+}
+
+/* Actions */
+.paper-actions {
+  margin-top: 0.5rem;
+}
+
+.view-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.view-link:hover {
+  text-decoration: underline;
+}

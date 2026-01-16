@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Papers | PaperVault</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/css/viewpaper.css">
+     <link rel="stylesheet" href="/css/homepage.css">
+</head>
+<body>
+
+<!-- HEADER (same as other pages) -->
+<header class="pv-header">
+  <div class="pv-header-container">
+    <a href="/university" class="pv-brand">📚 PaperVault</a>
+
+    <div class="pv-auth">
+       <% if (!currentUser) { %>
+    <!-- NOT LOGGED IN -->
+    <a href="/login" class="pv-auth-link">Login</a>
+    <a href="/register" class="pv-auth-link pv-register">Register</a>
+
+  <% } else { %>
+    <!-- LOGGED IN -->
+    <a href="/logout" class="pv-auth-link pv-logout">Logout</a>
+  <% } %>
+    </div>
+  </div>
+</header>
+
+<main class="page-container">
+
+    <!-- TOP BACK LINK -->
+    <div class="top-back-link">
+        <a href="javascript:history.back()" class="back-link">
+            ← Back
+        </a>
+    </div>
+
+    <!-- PAGE TITLE -->
+    <h1 class="page-title">Available Papers</h1>
+    <!-- FLASH MESSAGES -->
+<% if (success && success.length) { %>
+  <div class="alert alert-success text-center mt-3">
+    <%= success[0] %>
+  </div>
+<% } %>
+
+<% if (error && error.length) { %>
+  <div class="alert alert-danger text-center mt-3">
+    <%= error[0] %>
+  </div>
+<% } %>
+
+
+    <% if (papers.length === 0) { %>
+
+        <p class="empty-text">No papers found for the selected filters.</p>
+
+    <% } else { %>
+
+        <div class="papers-list">
+
+            <% for (let paper of papers) { %>
+                <div class="paper-card">
+
+                    <div class="paper-header">
+                        <h2 class="paper-title"><%= paper.title %></h2>
+                    </div>
+
+                    <div class="paper-meta">
+                        <span><%= paper.subject %></span>
+                        <span>Year <%= paper.year %></span>
+                        <span>Sem <%= paper.semester %></span>
+                    </div>
+
+                    <div class="paper-actions">
+                        <a 
+                          href="/<%= paper.filePath %>" 
+                          target="_blank"
+                          class="view-link"
+                        >
+                            View PDF
+                        </a>
+                    </div>
+
+                </div>
+            <% } %>
+
+        </div>
+
+    <% } %>
+
+</main>
+
+</body>
+</html>
+
