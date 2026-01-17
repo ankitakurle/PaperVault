@@ -23,13 +23,6 @@ const subjectData = require("./init/subjectdata");
 
 const MONGO_URL = process.env.MONGO_URL;
 const PORT = process.env.PORT || 8080;
-/* =======================
-   DATABASE
-======================= */
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => console.log("Connected to DB"))
-  .catch(err => console.log(err));
 
 /* =======================
    VIEW + MIDDLEWARE
@@ -70,7 +63,6 @@ app.use((req, res, next) => {
 function isLoggedIn(req, res, next) {
   if (req.session.userId) return next();
 
-  // remember page user wanted
   req.session.redirectTo = req.originalUrl;
   req.flash("error", "Please login first");
   res.redirect("/login");
@@ -100,44 +92,35 @@ app.get("/", (req, res) => {
   res.redirect("/university");
 });
 
-// LOGIN PAGE
 app.get("/login", (req, res) => {
   res.render("auth/login");
 });
 
-// REGISTER PAGE
 app.get("/register", (req, res) => {
   res.render("auth/register");
 });
 
-// REGISTER USER
 app.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
-  // 1️⃣ Check if user already exists
   const existingUser = await User.findOne({ email });
-
   if (existingUser) {
     req.flash("error", "User already exists. Please login.");
     return res.redirect("/login");
   }
 
-  // 2️⃣ Hash password
   const hash = await bcrypt.hash(password, 10);
 
-  // 3️⃣ Create new user
   await User.create({
     name,
     email,
     password: hash
   });
 
-  // 4️⃣ Redirect to login after successful registration
   req.flash("success", "Registration successful. Please login.");
   res.redirect("/login");
 });
 
-// LOGIN USER
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -155,14 +138,12 @@ app.post("/login", async (req, res) => {
 
   req.session.userId = user._id;
 
-  // redirect to original page
   const redirectUrl = req.session.redirectTo || "/university";
   delete req.session.redirectTo;
 
   res.redirect(redirectUrl);
 });
 
-// LOGOUT
 app.get("/logout", (req, res) => {
   req.session.destroy(() => {
     res.redirect("/university");
@@ -170,9 +151,8 @@ app.get("/logout", (req, res) => {
 });
 
 /* =======================
-   UNIVERSITY ROUTES (PUBLIC)
+   UNIVERSITY ROUTES
 ======================= */
-
 app.get("/university", async (req, res) => {
   const search = req.query.search || "";
 
@@ -182,12 +162,8 @@ app.get("/university", async (req, res) => {
 
   const alluniversities = await University.find(query);
 
-  res.render("university/index", {
-    alluniversities,
-    search
-  });
+  res.render("university/index", { alluniversities, search });
 });
-
 
 app.get("/university/:id", async (req, res) => {
   const uni = await University.findById(req.params.id);
@@ -208,16 +184,13 @@ app.get("/university/:uid/course/:cid", async (req, res) => {
 });
 
 /* =======================
-   PAPER ROUTES (LOGIN REQUIRED)
+   PAPER ROUTES
 ======================= */
-
-// VIEW PAPERS
 app.get("/papers", isLoggedIn, async (req, res) => {
   const papers = await Paper.find(req.query).sort({ createdAt: -1 });
   res.render("papers/index", { papers });
 });
 
-// UPLOAD PAGE
 app.get("/papers/upload", isLoggedIn, (req, res) => {
   res.render("papers/upload", {
     query: req.query,
@@ -225,13 +198,11 @@ app.get("/papers/upload", isLoggedIn, (req, res) => {
   });
 });
 
-// SAVE PAPER
 app.post(
   "/papers",
   isLoggedIn,
   upload.single("paperFile"),
   async (req, res) => {
-
     await Paper.create({
       title: req.body.title,
       university: req.body.university,
@@ -243,10 +214,8 @@ app.post(
       filePath: req.file.path
     });
 
-    //  Flash message
     req.flash("success", "Paper uploaded successfully");
 
-    //  Redirect to AVAILABLE PAPERS (same filters)
     res.redirect(
       `/papers?university=${req.body.university}` +
       `&course=${req.body.course}` +
@@ -258,13 +227,21 @@ app.post(
   }
 );
 
-
 /* =======================
-   SERVER
+   DATABASE + SERVER (FIXED)
 ======================= */
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+mongoose
+  .connect(MONGO_URL)
+  .then(() => {
+    console.log("MongoDB connected");
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error("MongoDB connection failed:", err);
+  });
 
 
 
